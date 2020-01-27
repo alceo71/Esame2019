@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Esame2019</string>
+    <string name="lista_attivita">LISTA ATTIVITÀ</string>
+    <string name="lista_utenti">LISTA UTENTI</string>
+    <string name="title_activity_utente_lista">UtenteListaActivity</string>
+    <string name="nome_cognome">%s %s</string>
+    <string name="eta">Età: %d</string>
+    <string name="eta_etichetta">età</string>
+    <string name="nome">nome</string>
+    <string name="cognome">cognome</string>
+    <string name="email">email</string>
+    <string name="salva">SALVA</string>
+    <string name="modifica">MODIFICA</string>
+    <string name="nuovo_utente">Nuovo utente</string>
+    <string name="modifica_utente">Modifica utente</string>
+    <string name="nuova_attivita">Nuova attività</string>
+    <string name="modifica_attivita">Modifica attività</string>
+    <string name="utente_eliminato">Utente eliminato con successo</string>
+    <string name="elimina_utente">Elimina utente</string>
+    <string name="messaggio_elimina_utente">Vuoi cancellare l\'utente selezionato?</string>
+    <string name="ok">OK</string>
+    <string name="annulla">annulla</string>
+    <string name="title_activity_attivita_lista">AttivitaListaActivity</string>
+    <string name="elenco_utenti">Elenco utenti</string>
+    <string name="titolo">Titolo</string>
+    <string name="descrizione">Descrizione</string>
+
+</resources>
