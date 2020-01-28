@@ -31,7 +31,7 @@ public class AttivitaService {
      */
     public Attivita get(int id){
         // Crea il db
-        AppDatabase db = AppDatabase.getDatabase(context);
+        AppDatabase db = AppDatabase.getDatabaseNoThread(context);
         // Recupera il DAO
         AttivitaDao dao = db.attivitaDao();
         return dao.get(id);
@@ -74,7 +74,7 @@ public class AttivitaService {
 
     public void update(Attivita attivita){
         // Crea il db
-        AppDatabase db = AppDatabase.getDatabase(context);
+        AppDatabase db = AppDatabase.getDatabaseNoThread(context);
         // Recupera il DAO
         AttivitaDao dao = db.attivitaDao();
         dao.update(attivita);
@@ -82,7 +82,7 @@ public class AttivitaService {
 
     public void delete(Attivita attivita){
         // Crea il db
-        AppDatabase db = AppDatabase.getDatabase(context);
+        AppDatabase db = AppDatabase.getDatabaseNoThread(context);
         // Recupera il DAO
         AttivitaDao dao = db.attivitaDao();
         dao.delete(attivita);

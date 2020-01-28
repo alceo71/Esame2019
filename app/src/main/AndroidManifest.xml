@@ -9,13 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AttivitaFormActivity"></activity>
         <activity
+            android:name=".AttivitaFormActivity"
+            android:parentActivityName=".AttivitaListaActivity"
+            ></activity>
+        <activity
+            android:parentActivityName=".MainActivity"
             android:name=".AttivitaListaActivity"
             android:label="@string/title_activity_attivita_lista"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".UtenteFormActivity" />
         <activity
+            android:parentActivityName=".UtenteListaActivity"
+            android:name=".UtenteFormActivity" />
+        <activity
+            android:parentActivityName=".MainActivity"
             android:name=".UtenteListaActivity"
             android:label="@string/title_activity_utente_lista"
             android:theme="@style/AppTheme.NoActionBar" />

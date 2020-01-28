@@ -31,6 +31,8 @@ public class AttivitaFormActivity extends AppCompatActivity {
     EditText data;
     Spinner spinnerUtente;
 
+    private int idAttivita;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,13 @@ public class AttivitaFormActivity extends AppCompatActivity {
 
         setTitle(R.string.nuova_attivita);
 
+        // Controlla se è un utente da modificare
+        if(getIntent().getExtras() != null) {
+            int value = getIntent().getExtras().getInt(MainActivity.ID_ATTIVITA, -1);
+            if (value != -1) {
+                idAttivita = value;
+            }
+        }
 
         spinnerUtente = findViewById(R.id.spinnerUtente);
 
@@ -56,9 +65,15 @@ public class AttivitaFormActivity extends AppCompatActivity {
                 UtenteAdapter adapter = new  UtenteAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, utenti);
                 spinnerUtente.setAdapter(adapter);
 
-
+                if(idAttivita != 0){
+                    AttivitaService attivitaService = new AttivitaService(getApplicationContext());
+                    Attivita attivita = attivitaService.get(idAttivita);
+                    assegnaValori(attivita);
+                }
             }
         });
+
+
 
 
     }
@@ -80,13 +95,36 @@ public class AttivitaFormActivity extends AppCompatActivity {
 
         // Salva nel db
         AttivitaService service = new AttivitaService(this);
-        service.insert(attivita);
+
+        if(idAttivita != 0){
+            attivita.setId(idAttivita);
+            service.update(attivita);
+        } else {
+            service.insert(attivita);
+        }
+
+
 
         finish();
 
     }
 
+    public void assegnaValori(Attivita attivita){
+        titolo.setText(attivita.getTitolo());
+        descrizione.setText(attivita.getDescrizione());
+        if(attivita.getData() != null){
+            data.setText(MainActivity.formatData.format(attivita.getData()));
+        }
 
+        int position = ((UtenteAdapter) spinnerUtente.getAdapter()).getPosition(attivita.getId());
+
+        if(position != -1){
+            Log.d(MainActivity.LOG_TAG,"Valore trovato " + position);
+            spinnerUtente.setSelection(position);
+        }
+
+        //Spinner spinnerUtente;
+    }
 
 
     /**
@@ -121,6 +159,21 @@ public class AttivitaFormActivity extends AppCompatActivity {
             label.setText(utente.getCongnone()+ " " + utente.getNome());
             label.setTextColor(Color.BLACK);
             return label;
+        }
+
+        public int getPosition(Integer idUtente){
+            int result = -1;
+
+            int position = 1;
+            for(Utente utente:utenti){
+                if(idUtente.equals(utente.getId())){
+                    result = position;
+                    break;
+                }
+                position++;
+            }
+
+            return result;
         }
 
     }

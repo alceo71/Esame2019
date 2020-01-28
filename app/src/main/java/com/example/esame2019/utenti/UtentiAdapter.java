@@ -22,7 +22,6 @@ public class UtentiAdapter extends RecyclerView.Adapter<UtenteViewHolder>{
 
 
     public UtentiAdapter(Context context, UtenteClickListener utenteClickListener, UtenteLongClickListener utenteLongClickListener) {
-        this.utenti = utenti;
         this.context = context;
         this.utenteClickListener = utenteClickListener;
         this.utenteLongClickListener = utenteLongClickListener;

@@ -44,7 +44,7 @@ public class UtenteFormActivity extends AppCompatActivity {
 
         // Controlla se è un utente da modificare
         if(getIntent().getExtras() != null){
-            int value = getIntent().getExtras().getInt(MainActivity.ID_UTENTE, -1);
+            int value = getIntent().getExtras().getInt(MainActivity.ID_ATTIVITA, -1);
             if(value != -1){
                 idUtente = value;
 

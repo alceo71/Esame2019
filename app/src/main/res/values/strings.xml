@@ -22,6 +22,7 @@
     <string name="annulla">annulla</string>
     <string name="title_activity_attivita_lista">AttivitaListaActivity</string>
     <string name="elenco_utenti">Elenco utenti</string>
+    <string name="titolo_elenco_attivita">Elenco attività</string>
     <string name="titolo">Titolo</string>
     <string name="descrizione">Descrizione</string>
 

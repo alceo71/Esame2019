@@ -6,11 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.text.SimpleDateFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     public final static String LOG_TAG = "esame2019_tag";
 
     public final static String ID_UTENTE = "it_utente";
+    public final static String ID_ATTIVITA = "it_attivita";
+
+    public final static SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,4 +8,15 @@
     tools:context=".AttivitaListaActivity"
     tools:showIn="@layout/activity_attivita_lista">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/elenco_attivita"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/attivita_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
