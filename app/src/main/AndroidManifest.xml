@@ -11,21 +11,28 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".AttivitaFormActivity"
-            android:parentActivityName=".AttivitaListaActivity"
-            ></activity>
+            android:parentActivityName=".AttivitaListaActivity" />
         <activity
-            android:parentActivityName=".MainActivity"
             android:name=".AttivitaListaActivity"
             android:label="@string/title_activity_attivita_lista"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:parentActivityName=".UtenteListaActivity"
-            android:name=".UtenteFormActivity" />
-        <activity
             android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.esame2019.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UtenteFormActivity"
+            android:parentActivityName=".UtenteListaActivity" />
+        <activity
             android:name=".UtenteListaActivity"
             android:label="@string/title_activity_utente_lista"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.esame2019.MainActivity" />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

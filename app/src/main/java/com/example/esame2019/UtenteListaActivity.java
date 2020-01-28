@@ -55,7 +55,8 @@ public class UtenteListaActivity extends AppCompatActivity implements UtenteClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utente_lista);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         setTitle(getString(R.string.elenco_utenti));
 
@@ -90,6 +91,7 @@ public class UtenteListaActivity extends AppCompatActivity implements UtenteClic
 
             }
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

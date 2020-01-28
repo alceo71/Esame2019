@@ -66,6 +66,7 @@ public class AttivitaListaActivity extends AppCompatActivity implements Attivita
 
             }
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

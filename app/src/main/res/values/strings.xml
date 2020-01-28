@@ -25,5 +25,6 @@
     <string name="titolo_elenco_attivita">Elenco attività</string>
     <string name="titolo">Titolo</string>
     <string name="descrizione">Descrizione</string>
+    <string name="title_activity_test">TESTActivity</string>
 
 </resources>
